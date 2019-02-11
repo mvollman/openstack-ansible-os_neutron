@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ansible_host: 10.1.0.2
+ansible_host: 10.1.1.101
 ansible_become: True
 ansible_user: root
 container_name: infra1
+tunnel_address: 10.1.2.101
+vlan_address: 10.1.3.101

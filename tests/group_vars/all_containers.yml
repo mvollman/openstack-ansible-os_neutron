@@ -20,6 +20,18 @@ container_networks:
     interface: "eth1"
     netmask: "255.255.252.0"
     type: "veth"
+  tunnel_address:
+    address: "{{ tunnel_address }}"
+    bridge: "br-vxlan"
+    interface: "eth2"
+    netmask: "255.255.255.0"
+    type: "veth"
+  vlan_address:
+    address: "{{ vlan_address }}"
+    bridge: "br-vlan"
+    interface: "eth12"
+    netmask: "255.255.255.0"
+    type: "veth"
 physical_host: localhost
 properties:
   service_name: "{{ inventory_hostname }}"

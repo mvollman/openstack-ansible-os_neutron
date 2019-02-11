@@ -27,8 +27,8 @@ tempest_test_whitelist:
   - "neutron_tempest_plugin.api.test_networks*"
 
 haproxy_ssl: false
-external_lb_vip_address: 10.1.0.1
-internal_lb_vip_address: 10.1.0.1
+external_lb_vip_address: 10.1.1.1
+internal_lb_vip_address: 10.1.1.1
 
 test_neutron_server_host: "{{ external_lb_vip_address }}"
 
@@ -41,3 +41,8 @@ haproxy_default_services:
       haproxy_balance_type: http
       haproxy_backend_options:
         - "httpchk GET /"
+
+neutron_provider_networks:
+  network_types: "vxlan,flat"
+  network_mappings: "flat:eth12"
+  network_vxlan_ranges: "1:1000"
